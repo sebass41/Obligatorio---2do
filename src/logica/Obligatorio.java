@@ -3,6 +3,7 @@ package logica;
 
 import UGI.jfPrincipal;
 import UGI.Registro;
+import persistencia.Conexión;
 
 
 public class Obligatorio {
@@ -13,6 +14,9 @@ public class Obligatorio {
         Registro registro = new Registro();
         inisio.setVisible(true);
         registro.setVisible(true);
+        
+        System.out.println("Hola mundo");
+       
     }
     
 }

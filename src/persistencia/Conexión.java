@@ -9,7 +9,7 @@ import java.sql.Statement;
 public class Conexión {
     String url ="jdbc:mysql://localhost:3306/";
     public String driver = "com.mysql.cj.jdbc.Driver";
-    public String database="";
+    public String database="tecnocolonia";
     public String usr="root";
     public String pass="sebas123456";
     
