@@ -1,12 +1,14 @@
 package UGI;
 
+import com.formdev.flatlaf.FlatDarkLaf;
 import javax.swing.JOptionPane;
 
-public class Registro extends javax.swing.JFrame {
+public class jfInicioSesion extends javax.swing.JFrame {
 
 
-    public Registro() {
+    public jfInicioSesion() {
         initComponents();
+        
     }
 
 
@@ -25,17 +27,19 @@ public class Registro extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
 
         jLabel3.setFont(new java.awt.Font("Serif", 1, 36)); // NOI18N
         jLabel3.setText("Ususario");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(5, 59, 80));
 
-        jPanel2.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel2.setBackground(new java.awt.Color(23, 107, 135));
 
         jLabel1.setFont(new java.awt.Font("Serif", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(100, 204, 197));
         jLabel1.setText("Inicio de Sesion");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -56,6 +60,7 @@ public class Registro extends javax.swing.JFrame {
         );
 
         jLabel2.setFont(new java.awt.Font("Serif", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(238, 238, 238));
         jLabel2.setText("Ususario");
         jLabel2.addHierarchyListener(new java.awt.event.HierarchyListener() {
             public void hierarchyChanged(java.awt.event.HierarchyEvent evt) {
@@ -64,6 +69,7 @@ public class Registro extends javax.swing.JFrame {
         });
 
         jLabel4.setFont(new java.awt.Font("Serif", 1, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(238, 238, 238));
         jLabel4.setText("Contraseña");
 
         jTextUsuario.addActionListener(new java.awt.event.ActionListener() {
@@ -78,6 +84,8 @@ public class Registro extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setBackground(new java.awt.Color(23, 107, 135));
+        jButton1.setForeground(new java.awt.Color(238, 238, 238));
         jButton1.setText("Ingresar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -88,6 +96,10 @@ public class Registro extends javax.swing.JFrame {
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagnes/iconUsuario.png"))); // NOI18N
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagnes/iconContraseña.png"))); // NOI18N
+
+        jButton2.setBackground(new java.awt.Color(23, 107, 135));
+        jButton2.setForeground(new java.awt.Color(238, 238, 238));
+        jButton2.setText("Registrarse");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -117,6 +129,10 @@ public class Registro extends javax.swing.JFrame {
                         .addGap(220, 220, 220)
                         .addComponent(jButton1)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jButton2)
+                .addGap(95, 95, 95))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -138,7 +154,9 @@ public class Registro extends javax.swing.JFrame {
                     .addComponent(jLabel6))
                 .addGap(35, 35, 35)
                 .addComponent(jButton1)
-                .addContainerGap(180, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(67, 67, 67))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -149,9 +167,7 @@ public class Registro extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 14, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -176,16 +192,22 @@ public class Registro extends javax.swing.JFrame {
 
     
     public static void main(String args[]) {
-        
+        try {
+                FlatDarkLaf.setup();
+        } catch( Exception ex ) {
+            System.err.println( "Failed to initialize LaF" );
+        }
+//      
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Registro().setVisible(true);
+                new jfInicioSesion().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

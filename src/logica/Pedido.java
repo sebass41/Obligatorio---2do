@@ -1,16 +1,7 @@
-
 package logica;
-
 
 public class Pedido {
    private int numPedido, fechaPedido,cantArticulos,fechaPago;
-
-    public Pedido(int numPedido, int fechaPedido, int cantArticulos, int fechaPago, String datoEnvio) {
-        this.numPedido = numPedido;
-        this.fechaPedido = fechaPedido;
-        this.cantArticulos = cantArticulos;
-        this.fechaPago = fechaPago;
-    }
 
     public int getNumPedido() {
         return numPedido;
@@ -42,8 +33,5 @@ public class Pedido {
 
     public void setFechaPago(int fechaPago) {
         this.fechaPago = fechaPago;
-    }
-
-   
-   
+    } 
 }

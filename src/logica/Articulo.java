@@ -3,17 +3,10 @@ package logica;
 
 
 public class Articulo {
-    private int numArticulo, stock, cantArticulo,fechaPago;
-    private String nombFabricante;
+    private int numArticulo, stock, cantArticulo,fechaPago; //Se crean los atríbutos que son tipo enteros 
+    private String nombFabricante;  //Se crean los atríbutos que son cadenas de texto
 
-    public Articulo(int numArticulo, int stock, int cantArticulo, int fechaPago, String nombFabricante) {
-        this.numArticulo = numArticulo;
-        this.stock = stock;
-        this.cantArticulo = cantArticulo;
-        this.fechaPago = fechaPago;
-        this.nombFabricante = nombFabricante;
-    }
-
+    //Encapsulamos los atributos
     public int getNumArticulo() {
         return numArticulo;
     }

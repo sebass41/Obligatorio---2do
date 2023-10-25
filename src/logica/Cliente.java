@@ -3,20 +3,10 @@ package logica;
 
 
 public class Cliente {
-    private int cedula, telefono, codPostal;
-    private String nombre, apellido, empresa, direccion, ciudad, departamento;
+    private int cedula, telefono, codPostal, numero;
+    private String nombre, apellido, empresa, calle, ciudad, departamento;
 
-    public Cliente(int cedula, int telefono, int codPostal, String nombre, String apellido, String empresa, String direccion, String ciudad, String departamento) {
-        this.cedula = cedula;
-        this.telefono = telefono;
-        this.codPostal = codPostal;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.empresa = empresa;
-        this.direccion = direccion;
-        this.ciudad = ciudad;
-        this.departamento = departamento;
-    }
+    
 
     public int getCedula() {
         return cedula;
@@ -66,12 +56,20 @@ public class Cliente {
         this.empresa = empresa;
     }
 
-    public String getDireccion() {
-        return direccion;
+    public String getCalle() {
+        return calle;
     }
 
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
+    public void setCalle(String calle) {
+        this.calle = calle;
+    }
+    
+    public int getNumero() {
+        return numero;
+    }
+    
+    public void setNumero(int numero){
+        this.numero = numero;
     }
 
     public String getCiudad() {

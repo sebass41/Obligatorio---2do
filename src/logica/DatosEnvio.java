@@ -6,12 +6,6 @@ public class DatosEnvio {
     private String direccion;
     private int fecha, peso, costo;
 
-    public DatosEnvio(String direccion, int fecha, int peso, int costo) {
-        this.direccion = direccion;
-        this.fecha = fecha;
-        this.peso = peso;
-        this.costo = costo;
-    }
 
     public String getDireccion() {
         return direccion;
