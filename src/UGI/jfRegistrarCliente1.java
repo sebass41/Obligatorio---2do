@@ -1,12 +1,25 @@
 
 package UGI;
 
+import javax.swing.JOptionPane;
+import logica.Cliente;
+import persistencia.Conexión;
+import persistencia.IngresarCliente;
 
-public class jfRegistrarCliente extends javax.swing.JFrame {
 
-    public jfRegistrarCliente() {
+public class jfRegistrarCliente1 extends javax.swing.JFrame {
+    
+    private static jfRegistrarCliente1 instance;
+    public static jfRegistrarCliente1 getInstance(){
+        if (instance == null){
+            instance = new jfRegistrarCliente1();
+        }
+        return instance;
+    }
+    public jfRegistrarCliente1() {
         initComponents();
         this.setSize(500, 500);
+        
     }
 
     
@@ -14,6 +27,7 @@ public class jfRegistrarCliente extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButton2 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         txtCalle = new javax.swing.JTextField();
@@ -39,13 +53,20 @@ public class jfRegistrarCliente extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
 
+        jButton2.setText("jButton2");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Registrar Cliente");
         setBackground(new java.awt.Color(153, 255, 153));
 
         jPanel1.setBackground(new java.awt.Color(23, 107, 135));
 
+        jLabel6.setFont(new java.awt.Font("Lato", 1, 12)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(238, 238, 238));
         jLabel6.setText("Empresa");
 
+        jLabel7.setFont(new java.awt.Font("Lato", 1, 12)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(238, 238, 238));
         jLabel7.setText("Ciudad");
 
         jButton1.setText("Aceptar");
@@ -55,11 +76,20 @@ public class jfRegistrarCliente extends javax.swing.JFrame {
             }
         });
 
+        jLabel8.setFont(new java.awt.Font("Lato", 1, 12)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(238, 238, 238));
         jLabel8.setText("Calle");
 
+        jLabel9.setFont(new java.awt.Font("Lato", 1, 12)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(238, 238, 238));
         jLabel9.setText("Departamento");
 
         cmbDepar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Artigas", "Canelones", "Cerro Largo", "Colonia", "Durazno", "Flores", "Florida", "Lavalleja", "Maldonado", "Montevideo", "Paysandú", "Río Negro", "Rivera", "Rocha", "Salto", "San José", "Soriano", "Tacuarembó", "Treinta y Tres" }));
+        cmbDepar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbDeparActionPerformed(evt);
+            }
+        });
 
         txtNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -73,16 +103,34 @@ public class jfRegistrarCliente extends javax.swing.JFrame {
             }
         });
 
+        txtTel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTelActionPerformed(evt);
+            }
+        });
+
+        jLabel11.setFont(new java.awt.Font("Lato", 1, 12)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(238, 238, 238));
         jLabel11.setText("Número");
 
+        jLabel1.setFont(new java.awt.Font("Lato", 1, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(238, 238, 238));
         jLabel1.setText("Nombre");
 
+        jLabel2.setFont(new java.awt.Font("Lato", 1, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(238, 238, 238));
         jLabel2.setText("Teléfono");
 
+        jLabel3.setFont(new java.awt.Font("Lato", 1, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(238, 238, 238));
         jLabel3.setText("Cédula");
 
+        jLabel4.setFont(new java.awt.Font("Lato", 1, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(238, 238, 238));
         jLabel4.setText("Apellido");
 
+        jLabel5.setFont(new java.awt.Font("Lato", 1, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(238, 238, 238));
         jLabel5.setText("Codigo postal");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -102,7 +150,7 @@ public class jfRegistrarCliente extends javax.swing.JFrame {
                     .addComponent(txtTel, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9)
                     .addComponent(cmbDepar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 158, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 156, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -177,13 +225,13 @@ public class jfRegistrarCliente extends javax.swing.JFrame {
                         .addComponent(txtNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(34, 34, 34)
                 .addComponent(jButton1)
-                .addContainerGap(105, Short.MAX_VALUE))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
 
         jPanel2.setBackground(new java.awt.Color(5, 59, 80));
         jPanel2.setForeground(new java.awt.Color(238, 238, 238));
 
-        jLabel10.setFont(new java.awt.Font("Palatino Linotype", 1, 24)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(238, 238, 238));
         jLabel10.setText("Registrar Cliente");
 
@@ -194,14 +242,14 @@ public class jfRegistrarCliente extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(153, 153, 153)
                 .addComponent(jLabel10)
-                .addContainerGap(164, Short.MAX_VALUE))
+                .addContainerGap(167, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(26, Short.MAX_VALUE)
+                .addContainerGap(32, Short.MAX_VALUE)
                 .addComponent(jLabel10)
-                .addContainerGap())
+                .addGap(29, 29, 29))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -215,37 +263,44 @@ public class jfRegistrarCliente extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(64, 64, 64)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 126, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 435, Short.MAX_VALUE)))
+                    .addGap(0, 410, Short.MAX_VALUE)))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
 
     }//GEN-LAST:event_txtNombreActionPerformed
 
+    //Método creado por el botón para insertar los Datos de "cliente"
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        boolean guardar = true;
-        String mensaje = "";
+        boolean guardar = true; //Creo variable "guardar" para verificar si los datos guardados en los text Field están correctos
+        String mensaje = ""; //Mensaje que se mostrará en caso de que haya un campo incompleto
         
-        String nombre = txtNombre.getText();
+        //Inicio del pasaje de los datos que ingresa el usuario a variables
+        String nombre = txtNombre.getText();                                    
         String apellido = txtApellido.getText();
-        int cedula = Integer.parseInt(txtCedula.getText());
-        int codPostal = Integer.parseInt(txtCodPostal.getText());
         String empresa = txtEmpresa.getText();
         String ciudad = txtCiudad.getText();
         String calle = txtCalle.getText();
-        int numero = Integer.parseInt(txtNum.getText());
+        String departamento = cmbDepar.getSelectedItem().toString();
+        try{ //Empiezo el try por si algun Field donde va un entero está vacío
+            int cedula = Integer.parseInt(txtCedula.getText());
+            int codPostal = Integer.parseInt(txtCodPostal.getText());
+            int numero = Integer.parseInt(txtNum.getText());
+            int telefono = Integer.parseInt(txtTel.getText());
+        //Fin del pasaje de los datos a las variables
         
-        if (cedula < 10000000){
+        if (txtCedula.getText().length() != 8){
             guardar = false;
-            mensaje += "Ingrese la cédula, por favor \n";
+            mensaje += "Ingrese una cédula valida, por favor \n";
         }
         if (nombre.length() == 0){
             guardar = false;
@@ -253,28 +308,91 @@ public class jfRegistrarCliente extends javax.swing.JFrame {
         }
         if (apellido.length() == 0){
             guardar = false;
-            mensaje += "Escriba el apellido, por favor";
+            mensaje += "Escriba el apellido, por favor  \n";
         }
-        if (codPostal == 0){
+        if (txtCodPostal.getText().length() != 5){
             guardar = false;
-            mensaje += "Ingrese el código postal, por favor";
+            mensaje += "Ingrese el código postal, por favor  \n";
         }
         if (empresa.length() == 0){
             guardar = false;
-            mensaje += "In";
+            mensaje += "Ingrese la empresa  \n";
         }
+        if (ciudad.length() == 0){
+            guardar = false;
+            mensaje += "Ingrese la ciudad  \n";
+        }
+        if (calle.length() == 0){
+            guardar = false;
+            mensaje += "Ingrese la calle  \n";
+        }
+        if (txtNum.getText().length() == 0){
+            guardar = false;
+            mensaje += "Ingrese el número de su casa";
+        }
+        if (txtTel.getText().length() < 9){
+            guardar = false;
+            mensaje += "Ingrese un número de teléfono válido";
+        }
+        
+            System.out.println(departamento);
+        if (guardar == true){ //Si todos los campos tienen sus datos correspondientes..
+            String [] codDepar = new String []{"G", "A","E","L","Q","N","O","P","B","V","I","J","F","C","H","M","K","R","D"};
+            boolean salir = false;
+            for (int i = 0; i < cmbDepar.getSelectedIndex() && !salir; i++){
+                if (i == cmbDepar.getSelectedIndex()){
+                    departamento = codDepar[i];
+                    salir = true;
+                }
+            }
+            System.out.println(cmbDepar.getSelectedIndex());
+            System.out.println(departamento);
+            IngresarCliente cliente = new IngresarCliente();
+            System.out.println(departamento);
+            cliente.insertar(cedula, nombre, apellido, empresa, codPostal, ciudad,"A", numero, calle); //Insertamos los datos
+            int id_tel = telefono - 5;
+            cliente.insertarTel(id_tel, cedula, telefono);
+            
+            txtNombre.setText("");
+            txtCedula.setText("");
+            txtApellido.setText("");
+            txtTel.setText("");
+            txtEmpresa.setText("");
+            txtCodPostal.setText("");
+            txtEmpresa.setText("");
+            txtCiudad.setText("");
+            txtNum.setText("");
+            txtCalle.setText("");
+            txtTel.setText("");
+            System.out.println("Datos insertados");
+        }else { //Si algún campo está incompleto..
+            JOptionPane.showMessageDialog(null, mensaje, "Faltan Datos",JOptionPane.WARNING_MESSAGE ); //Le mostramos un mensaje de lo que le falta
+        }
+        }catch(Exception e){ 
+            JOptionPane.showMessageDialog(null, "Faltan ingresar Datos", "ERROR", HEIGHT);
+        }
+            
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void txtNumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNumActionPerformed
 
+    private void txtTelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTelActionPerformed
+
+    private void cmbDeparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbDeparActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbDeparActionPerformed
+
 
     public static void main(String args[]) {
-
+        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new jfRegistrarCliente().setVisible(true);
+                new jfRegistrarCliente1().setVisible(true);
             }
         });
     }
@@ -282,6 +400,7 @@ public class jfRegistrarCliente extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> cmbDepar;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

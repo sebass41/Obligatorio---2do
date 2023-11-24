@@ -4,7 +4,8 @@ package logica;
 
 public class Cliente {
     private int cedula, telefono, codPostal, numero;
-    private String nombre, apellido, empresa, calle, ciudad, departamento;
+    private String nombre, apellido, empresa, calle, ciudad;
+    private String codDepart;
 
     
 
@@ -81,11 +82,11 @@ public class Cliente {
     }
 
     public String getDepartamento() {
-        return departamento;
+        return codDepart;
     }
 
     public void setDepartamento(String departamento) {
-        this.departamento = departamento;
+        this.codDepart = codDepart;
     }
     
     

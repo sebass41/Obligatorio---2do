@@ -14,7 +14,7 @@ public class Conexión {
     public String pass="sebas123456";
     
     Connection conn = null;
-    Statement st = null;
+    public Statement st = null;
     
     public Connection conectarMySQL()
     {

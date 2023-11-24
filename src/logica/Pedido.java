@@ -1,7 +1,10 @@
 package logica;
 
+import java.sql.Date;
+
 public class Pedido {
-   private int numPedido, fechaPedido,cantArticulos,fechaPago;
+   private int numPedido,cantArticulos, cedula, numArt;
+   private Date fechaPed, fechaPago;
 
     public int getNumPedido() {
         return numPedido;
@@ -9,14 +12,6 @@ public class Pedido {
 
     public void setNumPedido(int numPedido) {
         this.numPedido = numPedido;
-    }
-
-    public int getFechaPedido() {
-        return fechaPedido;
-    }
-
-    public void setFechaPedido(int fechaPedido) {
-        this.fechaPedido = fechaPedido;
     }
 
     public int getCantArticulos() {
@@ -27,11 +22,38 @@ public class Pedido {
         this.cantArticulos = cantArticulos;
     }
 
-    public int getFechaPago() {
+
+    public int getCedula() {
+        return cedula;
+    }
+
+    public void setCedula(int cedula) {
+        this.cedula = cedula;
+    }
+
+    public int getNumArt() {
+        return numArt;
+    }
+
+    public void setNumArt(int numArt) {
+        this.numArt = numArt;
+    }
+
+    public Date getFechaPed() {
+        return fechaPed;
+    }
+
+    public void setFechaPed(Date fechaPed) {
+        this.fechaPed = fechaPed;
+    }
+
+    public Date getFechaPago() {
         return fechaPago;
     }
 
-    public void setFechaPago(int fechaPago) {
+    public void setFechaPago(Date fechaPago) {
         this.fechaPago = fechaPago;
-    } 
+    }
+    
+    
 }
